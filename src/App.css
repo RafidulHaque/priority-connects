@@ -1,0 +1,138 @@
+﻿:root {
+  --bg-dark-main: #141718;
+  --bg-surface-card: #1e2223;
+  --bg-input-dark: #25292a;
+  --accent-brand-green: #00c875;
+  --text-light-pure: #ffffff;
+  --text-muted: #a4b3b6;
+  --font-main: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+html, body {
+  margin: 0; padding: 0; width: 100%; min-height: 100vh;
+  background-color: #0b0e10 !important;
+  background-image: radial-gradient(circle at 6% 8%, rgba(0,200,117,0.08) 0%, rgba(0,200,117,0.03) 8%, transparent 18%),
+                    radial-gradient(circle at 94% 92%, rgba(0,200,117,0.06) 0%, rgba(0,200,117,0.02) 12%, transparent 26%),
+                    linear-gradient(180deg, #0f1112 0%, #0b0e10 100%);
+  background-repeat: no-repeat; background-attachment: fixed; background-size: cover; background-position: center; color: var(--text-light-pure);
+  font-family: var(--font-main); overflow-x: hidden;
+}
+
+.navbar-header {
+  display: flex; justify-content: space-between; align-items: center;
+  background: linear-gradient(90deg, rgba(3,35,20,0.95) 0%, rgba(8,58,37,0.95) 100%);
+  padding: 15px 30px; border-bottom: 2px solid rgba(0,0,0,0.35);
+}
+
+.brand-logo { font-size: 24px; font-weight: bold; color: #ffffff; cursor: pointer; }
+.brand-logo span { color: var(--accent-brand-green); }
+.nav-button-group { display: flex; gap: 15px; }
+
+.nav-link-item {
+  background-color: #ffffff; color: #000000; border: none;
+  padding: 10px 22px; border-radius: 6px; font-weight: bold; cursor: pointer;
+  transition: all 0.2s ease;
+}
+.nav-link-item.current-active { 
+  background-color: var(--accent-brand-green) !important; 
+  color: #000000 !important;
+  box-shadow: 0 0 12px rgba(0,200,117,0.4);
+}
+
+.app-viewport-wrapper {
+  min-height: calc(100vh - 74px); padding: 35px; box-sizing: border-box;
+  background: linear-gradient(135deg, rgba(3,35,20,0.05) 0%, rgba(8,58,37,0.05) 100%);
+}
+
+/* Authentic Dark Auth Container */
+.auth-portal-container {
+  max-width: 320px; width: 100%; margin: 10vh auto; padding: 14px 14px;
+  background-color: var(--bg-surface-card); border-radius: 10px;
+  box-shadow: 0 6px 14px rgba(0,0,0,0.35); border: 1px solid #232726;
+  text-align: center; display: flex; flex-direction: column; justify-content: flex-start; align-items: center;
+  max-height: 420px; height: auto; overflow: visible;
+}
+
+@keyframes eyeToggle {
+  0% { transform: scale(1) rotate(0deg); opacity: 1; }
+  50% { transform: scale(1.05) rotate(-6deg); }
+  100% { transform: scale(1) rotate(0deg); opacity: 1; }
+}
+
+/* Main Workspace Grids */
+.grid-layout-dashboard { display: grid; grid-template-columns: 1.3fr 1fr; gap: 30px; width: 100%; }
+.dashboard-column { display: flex; flex-direction: column; gap: 25px; }
+.section-title { color: var(--accent-brand-green); font-size: 20px; margin: 0 0 15px 0; font-weight: 600; }
+.content-display-pane { background-color: var(--bg-surface-card); border-radius: 10px; padding: 25px; border: 1px solid #282d2f; }
+.scrollable-list-box { background: #141718; border-radius: 8px; padding: 20px; max-height: 380px; overflow-y: auto; border: 1px solid #222729; }
+
+/* Posts Ordered List Layout */
+.wireframe-item-card {
+  background: var(--bg-surface-card); color: var(--text-light-pure);
+  padding: 20px; margin-bottom: 15px; border-radius: 8px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.4);
+}
+
+/* Post Creation View Box */
+.post-creation-split-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; width: 100%; }
+.canvas-preview-frame { background: var(--bg-surface-card); border-radius: 8px; padding: 25px; color: var(--text-light-pure); display: flex; flex-direction: column; min-height: 400px; }
+.canvas-media-placeholder { width: 100%; height: 240px; background-color: #2d3234; border-radius: 6px; margin-bottom: 15px; }
+.studio-settings-panel { background: #d9d9d9; color: #000000; padding: 30px; border-radius: 10px; display: flex; flex-direction: column; gap: 18px; }
+.studio-row-item { display: grid; grid-template-columns: 140px 1fr; align-items: center; }
+
+/* Form inputs styling */
+.form-input-element {
+  width: 100%; border: 1px solid #2f3435; border-radius: 8px; padding: 8px 12px; font-size: 14px; box-sizing: border-box; height: 40px;
+}
+.form-input-element.dark-mode { background-color: var(--bg-input-dark); color: #ffffff; border: 1px solid #33393b; }
+.form-input-element.dark-mode:focus { border-color: var(--accent-brand-green); outline: none; }
+
+.action-submit-btn { 
+  background: var(--accent-brand-green); color: #000000; border: none; padding: 10px 18px; 
+  font-weight: 700; border-radius: 8px; cursor: pointer; transition: transform 0.12s ease, box-shadow 0.12s ease;
+}
+.action-submit-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 18px rgba(0,200,117,0.12);}
+
+/* Subscribed Teams Header Ribbon */
+.teams-badge-banner {
+  background: #191d1e; border: 1px solid #293032; padding: 15px 20px; border-radius: 8px; margin-bottom: 25px; font-size: 14px; color: var(--text-light-pure);
+}
+.teams-badge-banner strong { color: var(--accent-brand-green); }
+.team-pill-node {
+  display: inline-flex; align-items: center; gap: 8px; background: #25292a; border: 1px solid #383f41;
+  padding: 6px 14px; border-radius: 20px; margin-right: 10px; margin-top: 8px; color: #fff;
+}
+.leave-team-action { background: transparent; border: none; color: #ff3344; cursor: pointer; font-weight: bold; font-size: 16px; }
+
+/* Active Message Console View Layout */
+.messaging-master-wrapper { display: grid; grid-template-columns: 280px 1fr; gap: 30px; width: 100%; }
+.people-drawer-sidebar { background-color: var(--bg-surface-card); border-radius: 10px; padding: 20px; border: 1px solid #282d2f; }
+.people-drawer-header { font-size: 16px; font-weight: bold; color: var(--accent-brand-green); margin-bottom: 20px; border-bottom: 1px solid #2d3234; padding-bottom: 10px; }
+.drawer-person-node { display: flex; align-items: center; gap: 15px; cursor: pointer; padding: 12px; border-radius: 8px; margin-bottom: 8px; transition: background 0.2s; }
+.drawer-person-node:hover, .drawer-person-node.node-active { background: #25292a; }
+.drawer-avatar-circle { width: 42px; height: 42px; border-radius: 50%; background-color: #555; background-size: cover; background-position: center; }
+.drawer-avatar-circle.active-ring { border: 2px solid var(--accent-brand-green); }
+
+/* Profile Large Avatar Settings nodes */
+.avatar-large-profile-node { width: 130px; height: 130px; border-radius: 50%; margin: 0 auto 15px auto; background-size: cover; background-position: center; border: 3px solid var(--accent-brand-green); }
+.color-node-selector { width: 45px; height: 25px; border-radius: 4px; border: 2px solid #fff; cursor: pointer; display: inline-block; margin-top: 5px; }
+
+/* Floating Action Trigger Button */
+.floating-trigger-button {
+  position: fixed; bottom: 35px; right: 35px; z-index: 999; background: var(--accent-brand-green); color: #000;
+  border: 3px solid #023922; box-sizing: border-box; width: 60px; height: 60px; border-radius: 50%; font-weight: bold; font-size: 28px; cursor: pointer;
+  box-shadow: 0 6px 22px rgba(0,200,117,0.22), 0 0 0 6px rgba(2,57,34,0.06);
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
+}
+.floating-trigger-button:hover { transform: translateY(-3px); box-shadow: 0 10px 30px rgba(0,200,117,0.28), 0 0 0 8px rgba(2,57,34,0.08); }
+
+/* Ensure global root elements inherit the dark green gradient (lightened) */
+#root, #root > div, .app-viewport-wrapper {
+  background-color: #0f1412;
+  background-image: radial-gradient(circle at 8% 12%, rgba(0,200,117,0.18) 0%, rgba(0,200,117,0.06) 22%, transparent 48%),
+                    radial-gradient(circle at 92% 88%, rgba(0,200,117,0.12) 0%, rgba(0,200,117,0.04) 20%, transparent 48%),
+                    radial-gradient(circle at 50% 45%, rgba(255,255,255,0.02) 0%, transparent 35%),
+                    linear-gradient(180deg, #0f1a16 0%, #08120f 100%);
+  background-repeat: no-repeat;
+  background-attachment: fixed; background-size: cover; background-position: center;
+}
